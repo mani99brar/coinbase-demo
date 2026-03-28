@@ -19,10 +19,13 @@ function setCorsHeaders(origin: string | null): Record<string, string> {
   // Check if origin is allowed
   if (origin && ALLOWED_ORIGINS.includes(origin)) {
     return {
-      'Access-Control-Allow-Origin': origin,
-      'Access-Control-Allow-Methods': 'POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-      'Access-Control-Max-Age': '86400', // 24 hours
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+    // Broaden the allowed headers
+    'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With, Accept',
+    // REQUIRED if your frontend fetch uses credentials: 'include'
+    'Access-Control-Allow-Credentials': 'true', 
+    'Access-Control-Max-Age': '86400',
     };
   }
   return {};

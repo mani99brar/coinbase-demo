@@ -5,6 +5,7 @@ import { CDPReactProvider } from '@coinbase/cdp-react';
 import { ReactNode } from 'react';
 import { base } from 'wagmi/chains';
 import { CoinbaseRampTransactionProvider } from './contexts/CoinbaseRampTransactionContext';
+import { SessionProvider } from "next-auth/react";
 
 export function Providers({ children }: { children: ReactNode }) {
   // ✅ Only use environment variables - NO hardcoded fallbacks
@@ -66,6 +67,6 @@ export function Providers({ children }: { children: ReactNode }) {
           {children}
         </OnchainKitProvider>
       </CoinbaseRampTransactionProvider>
-    </CDPReactProvider>
+      </CDPReactProvider>
   );
 }
