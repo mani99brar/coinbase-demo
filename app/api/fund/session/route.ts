@@ -7,7 +7,7 @@ const ALLOWED_ORIGINS = process.env.ALLOWED_ORIGINS?.split(',') || [
   'http://localhost:3000',
   'http://localhost:3001',
   // Production domains
-  'https://onramp-demo-application-git-main-coinbase-vercel.vercel.app',
+  'https://coinbase-demo-delta.vercel.app',
   'https://www.onrampdemo.com',
   'https://onramp-demo-application-coinbase-vercel.vercel.app/'
 ];
